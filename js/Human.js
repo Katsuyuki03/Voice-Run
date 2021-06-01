@@ -2,7 +2,7 @@ export class Dino{
     constructor(gameWidth,gameHeight){
         this.gameWidth = gameWidth;
         this.gameHeight = gameHeight;
-        this.image = document.getElementById("img_dino");
+        this.image = document.getElementById("img_hito");
         this.offset = 20;
         this.r = 60;
         this.width = this.r*2;
