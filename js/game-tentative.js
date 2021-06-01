@@ -1,4 +1,4 @@
-import { Dino } from "./dino.js";
+import { Dino } from "./Human.js";
 import { InputHandler } from "./input.js";
 import { Bomb } from "./bomb.js";
 
