@@ -5,7 +5,7 @@ export class Dino{
         this.image = document.getElementById("img_hito");
         this.offset = 20;
         this.r = 60;
-        this.width = this.r*2;
+        this.width = this.r;
         this.height = this.r*2;
         this.position = {
             x:60,
