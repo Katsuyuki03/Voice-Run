@@ -3,7 +3,7 @@ export class Bomb{
         this.gameWidth = gameWidth;
         this.gameHeight = gameHeight;
         this.image = document.getElementById("img_bomb");
-        this.offset = 20;
+        this.offset = 0;
         this.r = 60;
         this.width = this.r*2;　//幅
         this.height = this.r*2; //高さ

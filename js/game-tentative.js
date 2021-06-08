@@ -53,26 +53,30 @@ function gameLoop(timestamp){
         bomb[i].draw(ctx);
 
         //爆弾が恐竜と当たったかどうかの判定
-        if(bomb[i].checkHit(dino.position.x,dino.position.y,dino.r,
-            bomb[i].position.x,bomb[i].position.y,bomb[i].r)){
+        if (
+          bomb[i].checkHit(
+            dino.position.x,
+            dino.position.y + dino.height,
+            dino.r,
+            bomb[i].position.x,
+            bomb[i].position.y + bomb[i].height,
+            bomb[i].r
+          )
+        ) {
+          //もし衝突したら爆弾クラスで読み込んだ音を出す
+          var playbomb = bomb[i].audio.play();
+          //ユーザー操作がなかった時に、DOMExceptionのエラーがおこるため
+          if (playbomb !== undefined) {
+            playbomb
+              .then((_) => {})
+              .catch((error) => {
+                console.log(error);
+              });
+          }
 
-                //もし衝突したら爆弾クラスで読み込んだ音を出す
-                var playbomb = bomb[i].audio.play();
-                //ユーザー操作がなかった時に、DOMExceptionのエラーがおこるため
-                if(playbomb !== undefined){
-                    playbomb.then(_ =>{
-                        
-                    })
-                    .catch(error =>{
-                        console.log(error);
-                    });
-                }
-                
-                gamestate=false;　
-                
-                dino.audio.muted = true; //恐竜のジャンプ音をミュート
-                
-            }
+          gamestate = false;
+          dino.audio.muted = true; //恐竜のジャンプ音をミュート
+        }
         //爆弾の位置がゲーム画面外に出たら爆弾の配列を削除
         if(bomb[i].offScreen()){
             score++;
