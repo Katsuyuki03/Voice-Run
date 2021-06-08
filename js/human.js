@@ -3,10 +3,10 @@ export class Dino{
         this.gameWidth = gameWidth;
         this.gameHeight = gameHeight;
         this.image = document.getElementById("img_hito");
-        this.offset = 20;
-        this.r = 60;
-        this.width = this.r;
-        this.height = this.r*2;
+        this.offset = 0;
+        this.r = 95 / 2;
+        this.width = 95;
+        this.height = 276;
         this.position = {
             x:60,
             y:this.gameHeight-this.offset-this.height
