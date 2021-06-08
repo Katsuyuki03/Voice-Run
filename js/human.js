@@ -18,8 +18,11 @@ export class Dino{
         this.audio = new Audio("./bubble-burst1.mp3");   
     }
     up(){
+
+        
+
         if(this.jumpFlag){
-            
+            this.image = document.getElementById("img_jump");
             this.speed = this.lift;
             this.jumpFlag = false;
             
@@ -39,6 +42,7 @@ export class Dino{
             this.position.y = this.gameHeight-this.offset-this.height;
             this.speed = 0;
             this.jumpFlag = true;
+            this.image = document.getElementById("img_hito");
         }
     }
     draw(ctx){
