@@ -1,6 +1,6 @@
 import { Dino } from "./Human.js";
 import { InputHandler } from "./input.js";
-import { Bomb } from "./bomb.js";
+import { Bomb } from "./Bomb.js";
 
 //minからmaxまでの範囲でランダムな整数を生成する関数
 export function getRandomInt(min,max){
