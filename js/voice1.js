@@ -1,4 +1,4 @@
-let mic;
+
 
 function setup() {
   createCanvas(710, 200);
