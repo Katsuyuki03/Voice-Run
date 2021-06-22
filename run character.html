@@ -10,8 +10,8 @@
  var canvasWidth = 650; 
  var canvasHeight = 350;
  
- var spriteWidth = 864; 
- var spriteHeight = 280; 
+ var spriteWidth = 800; 
+ var spriteHeight = 300; 
  
  var rows = 2; 
  var cols = 8; 
@@ -48,6 +48,7 @@
  function updateFrame(){
  curFrame = ++curFrame % frameCount; 
  srcX = curFrame * width; 
+ ctx.clearRect(x,y,width,height);
  
  }
  
