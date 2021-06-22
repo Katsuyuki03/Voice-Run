@@ -4,7 +4,7 @@ export class Dino{
         this.gameHeight = gameHeight;
   
         this.offset = 20;
-        this.r = 60;
+        this.r = 50;
         this.width = this.r*2;
         this.height = this.r*2;
         this.position = {
@@ -17,47 +17,25 @@ export class Dino{
         this.jumpFlag = true;
         this.audio = new Audio("./bubble-burst1.mp3");  
          
+        this.frame = 0;
 
-        var canvasWidth = 650; 
-        var canvasHeight = 500;
+        this.spriteWidth = 800; 
+        this.spriteHeight = 300; 
         
-        var spriteWidth = 800; 
-        var spriteHeight = 300; 
+        this.rows = 2;
+        this.cols = 8;
         
-        var rows = 2; 
-        var cols = 8; 
+        this.curFrame = 0; 
+        this.frameCount = 8; 
         
-        var width = spriteWidth/cols; 
-        var height = spriteHeight/rows; 
+        this.srcX = 0; 
+        this.srcY = 0; 
         
-        var curFrame = 0; 
-        var frameCount = 8; 
-        
-        var x=100;
-        var y=310; 
-        
-        var srcX=0; 
-        var srcY=0; 
-
-        var speed = 12; 
-        
-        var canvas = document.getElementById('canvas');
-        canvas.width = canvasWidth;
-        canvas.height = canvasHeight; 
-        
-        var ctx = canvas.getContext("2d");
-        
-        var character = new Image(); 
-        character.src = "images/player.png";
-        
-       
-
+        this.characterImg = new Image(); 
+        this.characterImg.src = 'images/player.png';
     }
     
     up(){
-
-        
-
         if(this.jumpFlag){
             this.image = document.getElementById("img_jump");
             this.speed = this.lift;
@@ -65,24 +43,19 @@ export class Dino{
             
             this.audio.play();　//ジャンプをしたときに「bubble-burst1.mp3」音声をplay
         }   
-       
     }
     
-
-
-
-
-    
     update(detlaTime){
-       
-        
+        this.frame++;
+    
         this.position.y += this.speed;
         this.speed += this.gravity;
 
-        curFrame = ++curFrame % frameCount; 
-        srcX = curFrame * width; 
-        ctx.clearRect(x,y,width,height);
-
+        if (this.frame % 12 === 0) { 
+            this.curFrame = ++this.curFrame % this.frameCount; 
+            this.srcX = this.curFrame * this.width;
+        }
+        // ctx.clearRect(x,y,width,height);
 
         /*もし恐竜の位置が初期位置（this.gameHeight-this.offset-this.height）より大きい場合、
         位置を初期位置にする*/
@@ -93,14 +66,21 @@ export class Dino{
             this.image = document.getElementById("img_hito");
         }
     }
+
     draw(ctx){
         /*ctx.beginPath();
         ctx.arc(this.position.x+this.r,this.position.y+this.r,this.r,0,2*Math.PI);
         ctx.stroke();*/
-        ctx.drawImage(character,this.position.x,this.position.y,this.width,this.height);
-
+        ctx.drawImage(
+          this.characterImg,
+          this.srcX,
+          this.srcY,
+          this.width,
+          this.height,
+          this.position.x,
+          this.position.y,
+          this.width,
+          this.height
+        );
     }
-
-    
-
 }
