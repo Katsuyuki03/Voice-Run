@@ -4,7 +4,7 @@ export class Dino{
         this.gameHeight = gameHeight;
         this.image = document.getElementById("img_hito");
         this.offset = 20;
-        this.r = 60;
+        this.r = 50;
         this.width = this.r*2;
         this.height = this.r*2;
         this.position = {
@@ -16,13 +16,30 @@ export class Dino{
         this.lift = -12;
         this.jumpFlag = true;
         this.audio = new Audio("./bubble-burst1.mp3");   
+    
+        this.frame = 0;
+    
+        this.spriteWidth = 800; 
+        this.spriteHeight = 300; 
+
+        this.rows = 2;
+        this.cols = 8;
+
+        this.curFrame = 0; 
+        this.frameCount = 8; 
+
+        this.srcX = 0; 
+        this.srcY = 0; 
+        
+        this.characterImg = new Image(); 
+        this.characterImg.src = 'images/player.png';
     }
     up(){
 
         
 
         if(this.jumpFlag){
-            this.image = document.getElementById("img_jump");
+            this.image = document.getElementById("images/jump.png");
             this.speed = this.lift;
             this.jumpFlag = false;
             
@@ -32,9 +49,15 @@ export class Dino{
     }
     update(detlaTime){
        
+        this.frame++;
         
         this.position.y += this.speed;
         this.speed += this.gravity;
+
+        if (this.frame % 12 === 0) { 
+            this.curFrame = ++this.curFrame % this.frameCount; 
+            this.srcX = this.curFrame * this.width;
+        }
 
         /*もし恐竜の位置が初期位置（this.gameHeight-this.offset-this.height）より大きい場合、
         位置を初期位置にする*/
@@ -49,7 +72,16 @@ export class Dino{
         /*ctx.beginPath();
         ctx.arc(this.position.x+this.r,this.position.y+this.r,this.r,0,2*Math.PI);
         ctx.stroke();*/
-        ctx.drawImage(this.image,this.position.x,this.position.y,this.width,this.height);
-
+        ctx.drawImage(
+            this.characterImg,
+            this.srcX,
+            this.srcY,
+            this.width,
+            this.height,
+            this.position.x,
+            this.position.y,
+            this.width,
+            this.height
+          );
     }
 }
