@@ -2,7 +2,6 @@ export class Dino{
     constructor(gameWidth,gameHeight){
         this.gameWidth = gameWidth;
         this.gameHeight = gameHeight;
-        this.image = document.getElementById("img_hito");
         this.offset = 20;
         this.r = 50;
         this.width = this.r*2;
@@ -13,7 +12,7 @@ export class Dino{
         };
         this.speed = 0;
         this.gravity = 0.5;
-        this.lift = -13;
+        this.lift = -12;
         this.jumpFlag = true;
         this.audio = new Audio("./bubble-burst1.mp3");   
     
@@ -42,6 +41,7 @@ export class Dino{
             
             this.characterImg.src ="images/jump.png";
             this.speed = this.lift;
+            this.frame = 0;
             this.jumpFlag = false;
             
             this.audio.play();　//ジャンプをしたときに「bubble-burst1.mp3」音声をplay
@@ -55,7 +55,7 @@ export class Dino{
         this.position.y += this.speed;
         this.speed += this.gravity;
 
-        if (this.frame % 12 === 0) { 
+        if (this.frame % 6 === 0) { 
             this.curFrame = ++this.curFrame % this.frameCount; 
             this.srcX = this.curFrame * this.width;
         }
@@ -67,6 +67,7 @@ export class Dino{
             this.speed = 0;
             this.jumpFlag = true;
             this.characterImg.src = 'images/player.png';
+            
         }
     }
     draw(ctx){
