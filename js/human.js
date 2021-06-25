@@ -6,14 +6,14 @@ export class Dino{
         this.offset = 20;
         this.r = 50;
         this.width = this.r*2;
-        this.height = this.r*2;
+        this.height = this.r*3;
         this.position = {
             x:60,
             y:this.gameHeight-this.offset-this.height
         };
         this.speed = 0;
         this.gravity = 0.5;
-        this.lift = -12;
+        this.lift = -13;
         this.jumpFlag = true;
         this.audio = new Audio("./bubble-burst1.mp3");   
     
@@ -39,7 +39,8 @@ export class Dino{
         
 
         if(this.jumpFlag){
-            this.image = document.getElementById("images/jump.png");
+            
+            this.characterImg.src ="images/jump.png";
             this.speed = this.lift;
             this.jumpFlag = false;
             
@@ -65,7 +66,7 @@ export class Dino{
             this.position.y = this.gameHeight-this.offset-this.height;
             this.speed = 0;
             this.jumpFlag = true;
-            this.image = document.getElementById("img_hito");
+            this.characterImg.src = 'images/player.png';
         }
     }
     draw(ctx){
