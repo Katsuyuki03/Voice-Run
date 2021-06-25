@@ -43,7 +43,8 @@ export class Dino{
             this.speed = this.lift;
             this.frame = 0;
             this.jumpFlag = false;
-            
+            this.curFrame = 0; 
+            this.frameCount = 1; 
             this.audio.play();　//ジャンプをしたときに「bubble-burst1.mp3」音声をplay
         }   
        
