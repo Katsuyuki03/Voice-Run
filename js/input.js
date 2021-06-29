@@ -1,4 +1,7 @@
-function setup() {
+
+export class InputHandler{
+
+ setup() {
     // Create an Audio input
     mic = new p5.AudioIn();
   
@@ -7,19 +10,14 @@ function setup() {
     mic.start();
   }
 
-export class InputHandler{
-
+    
     constructor(dino){
-        document.addEventListener("keydown",event =>{
-            switch(event.keyCode){
+        document.addEventListener("Voice",event =>{
+           
+            let vol = mic.getLevel();
 
-
-                
-                case 38: //キーボードの上↑のボタンが押されたとき
-                    dino.up();
-                    break;
-               
-            }
+            let h = map(vol, 0, 1, height, 0);
+            dino.up();
         })
     }
 }

@@ -35,7 +35,7 @@ export class Dino{
     }
     up(){
 
-        
+        let h = map(vol, 0, 1, height, 0);
 
         if(this.jumpFlag){
             
