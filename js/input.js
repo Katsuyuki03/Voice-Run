@@ -12,7 +12,7 @@ export class InputHandler{
 
     
     constructor(dino){
-        document.addEventListener("keydown",event =>{
+        document.addEventListener("mic",event =>{
             switch(event.keyCode){
 
                 case mic.getLevel(): //キーボードの上↑のボタンが押されたとき
