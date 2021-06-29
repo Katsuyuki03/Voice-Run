@@ -12,12 +12,14 @@ export class InputHandler{
 
     
     constructor(dino){
-        document.addEventListener("Voice",event =>{
-           
-            let vol = mic.getLevel();
+        document.addEventListener("keydown",event =>{
+            switch(event.keyCode){
 
-            let h = map(vol, 0, 1, height, 0);
-            dino.up();
+                case mic.getLevel(): //キーボードの上↑のボタンが押されたとき
+                    dino.up();
+                    break;
+               
+            }
         })
     }
 }
