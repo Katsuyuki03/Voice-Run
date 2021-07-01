@@ -20,13 +20,24 @@ const GAME_WIDTH = 800;　//ゲームキャンバスの幅
 const GAME_HEIGHT = 500;　//ゲームキャンバスの高さ
 
 let dino = new Dino(GAME_WIDTH,GAME_HEIGHT);
-new InputHandler(dino);
+
 let bomb = [];
+
+
+const inputHandler = new InputHandler(dino);
 
 
 let lastTime = 0;
 let counter = 0;
 let interval = 0;　
+
+function setup() {
+    console.log("setup");
+    inputHandler.setup();
+  }
+  
+  window.setup = setup;
+
 
 function gameLoop(timestamp){
     let deltaTime = timestamp -lastTime;
@@ -34,15 +45,18 @@ function gameLoop(timestamp){
 
     ctx.drawImage(backImg,0,0,GAME_WIDTH,GAME_HEIGHT); //背景の描写 
 
+    inputHandler.update();
+
+
     dino.update(deltaTime); 
     dino.draw(ctx);
 
     counter += deltaTime;
-    if(counter > interval){　//800ミリ秒から２秒間隔で爆弾を生成
-        bomb.push(new Bomb(GAME_WIDTH,GAME_HEIGHT));
-        counter = 0;
-        interval = getRandomInt(800,2000); //インターバルを800ミリ秒から２秒までの乱数に設定
-    }
+   // if(counter > interval){　//800ミリ秒から２秒間隔で爆弾を生成
+     //   bomb.push(new Bomb(GAME_WIDTH,GAME_HEIGHT));
+       // counter = 0;
+        //interval = getRandomInt(800,2000); //インターバルを800ミリ秒から２秒までの乱数に設定
+    //}
 
     ctx.font = "40px sans-serif";　　　　　//スコアとして表示する文字の大きさとフォント
     ctx.fillText("Score:"+score,60,60);  //スコアを（60,60）の位置に表示する
