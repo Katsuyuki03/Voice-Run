@@ -1,14 +1,14 @@
 
 export class InputHandler{
 
- //setup() {
+ setup() {
  // // Create an Audio input
- //  mic = new p5.AudioIn();
+   mic = new p5.AudioIn();
   
  //   // start the Audio Input.
  //  // By default, it does not .connect() (to the computer speakers)
- //   mic.start();
- // }
+    mic.start();
+  }
 
     
     constructor(dino){
@@ -20,25 +20,25 @@ export class InputHandler{
 
   // 音声認識バージョン
   //   // 音声認識を利用するのに SpeechRecognition を利用します
-  //   const speechRecognition = new webkitSpeechRecognition();
+     const speechRecognition = new webkitSpeechRecognition();
 
-  //   speechRecognition.lang = "ja-JP";
-  //   speechRecognition.continuous = true;
-  //   speechRecognition.interimResults = false;
+     speechRecognition.lang = "ja-JP";
+     speechRecognition.continuous = true;
+     speechRecognition.interimResults = false;
 
   //   // 音声認識を開始する
-  //   speechRecognition.start();
+     speechRecognition.start();
 
   //   // 音声認識が成功した時の処理を登録します。
-  //   speechRecognition.addEventListener("result", (event) => {
-  //     const transcript = event.results[0][0].transcript;
+    speechRecognition.addEventListener("result", (event) => {
+       const transcript = event.results[0][0].transcript;
 
-  //     console.log(transcript);
+       console.log(transcript);
 
-  //     if (transcript === "ジャンプ") {
-  //       dino.up();
-  //     }
-  //   });
+       if (transcript === "ジャンプ") {
+         dino.up();
+       }
+     });
   }
 
   setup() {

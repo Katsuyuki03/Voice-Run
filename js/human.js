@@ -14,7 +14,7 @@ export class Dino{
         this.gravity = 0.5;
         this.lift = -12;
         this.jumpFlag = true;
-        this.audio = new Audio("./bubble-burst1.mp3");   
+        this.audio = new Audio();   
     
         this.frame = 0;
     

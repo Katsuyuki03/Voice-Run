@@ -13,7 +13,7 @@ export class Bomb{
         };
         this.speed = 8;
        
-        this.audio = new Audio("./ta_ge_kotaiko02.mp3");
+        this.audio = new Audio();
     }
     //二つの円：中心座標（x1,y1）、半径r1の円と、中心が（x2,y2）で半径r2の円が接触したかどうかの判定
     checkHit(x1,y1,r1,x2,y2,r2){
