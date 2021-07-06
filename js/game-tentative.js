@@ -53,9 +53,9 @@ function gameLoop(timestamp){
 
     counter += deltaTime;
    // if(counter > interval){　//800ミリ秒から２秒間隔で爆弾を生成
-     //   bomb.push(new Bomb(GAME_WIDTH,GAME_HEIGHT));
-    //    counter = 0;
-    //    interval = getRandomInt(800,2000); //インターバルを800ミリ秒から２秒までの乱数に設定
+   //     bomb.push(new Bomb(GAME_WIDTH,GAME_HEIGHT));
+   //     counter = 0;
+   //     interval = getRandomInt(800,2000); //インターバルを800ミリ秒から２秒までの乱数に設定
     //}
 
     ctx.font = "40px sans-serif";　　　　　//スコアとして表示する文字の大きさとフォント
