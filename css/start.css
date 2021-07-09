@@ -1,12 +1,12 @@
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: inherit;
+  
   box-sizing: inherit;
 }
 
 html {
-  -webkit-box-sizing: border-box;
+ 
   box-sizing: border-box;
   font-size: 62.5%;
 }
@@ -21,11 +21,9 @@ button.btn {
   display: inline-block;
   padding: 1rem 4rem;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  
   user-select: none;
-  -webkit-transition: all 0.3s;
+  
   transition: all 0.3s;
   text-align: center;
   vertical-align: middle;
@@ -39,8 +37,7 @@ a.btn-border {
   margin-bottom: 12px;
   padding: 0;
 
-  -webkit-transition: all 0.3s;
-
+ 
   transition: all 0.3s;
 
   border-radius: 0;
@@ -70,7 +67,7 @@ a.btn-border:before {
   height: 14px;
 
   content: "";
-  -webkit-transition: all 0.3s;
+  
   transition: all 0.3s;
 
   border: 2px solid #000;
@@ -92,13 +89,11 @@ a.btn-border:before {
   );
   background-size: 7px 7px;
 
-  -webkit-backface-visibility: hidden;
-
+ 
   backface-visibility: hidden;
 }
 
 a.btn-border:hover {
-  -webkit-transform: translate(0, 3px);
   transform: translate(0, 3px);
 }
 
@@ -107,7 +102,6 @@ a.btn-border:hover:before {
 }
 
 a.btn-border:active {
-  -webkit-transform: translate(0, 7px);
   transform: translate(0, 7px);
 }
 
