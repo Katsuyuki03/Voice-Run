@@ -33,7 +33,7 @@ button.btn {
   border-radius: 0.5rem;
 }
 
-a.btn-border {
+a.btn-border1 {
   margin-bottom: 12px;
   padding: 0;
 
@@ -43,7 +43,7 @@ a.btn-border {
   border-radius: 0;
 }
 
-a.btn-border span {
+a.btn-border1 span {
   position: relative;
 
   display: block;
@@ -56,7 +56,7 @@ a.btn-border span {
   background: #fff;
 }
 
-a.btn-border:before {
+a.btn-border1:before {
   position: absolute;
   bottom: -8px;
   left: 0;
@@ -93,18 +93,18 @@ a.btn-border:before {
   backface-visibility: hidden;
 }
 
-a.btn-border:hover {
+a.btn-border1:hover {
   transform: translate(0, 3px);
 }
 
-a.btn-border:hover:before {
+a.btn-border1:hover:before {
   bottom: -5px;
 }
 
-a.btn-border:active {
+a.btn-border1:active {
   transform: translate(0, 7px);
 }
 
-a.btn-border:active:before {
+a.btn-border1:active:before {
   bottom: -1px;
 }
