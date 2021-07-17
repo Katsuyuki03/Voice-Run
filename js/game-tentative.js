@@ -39,7 +39,7 @@ function setup() {
   window.setup = setup;
 
   function mousePressed() {
-    console.log('mousePressed');
+    console.log('css/start.css');
     userStartAudio();
     requestAnimationFrame(gameLoop);
 }
@@ -104,6 +104,11 @@ function gameLoop(timestamp){
     //ゲーム状態がfalseだったらゲームをストップ
     if(!gamestate){
         return;  
-     }
+         
+    }
+
+     
+
     requestAnimationFrame(gameLoop);
+
 }
