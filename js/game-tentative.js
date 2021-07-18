@@ -42,8 +42,11 @@ function setup() {
     console.log('css/start.css');
     userStartAudio();
     requestAnimationFrame(gameLoop);
+
 }
 window.mousePressed = mousePressed;
+
+
 
 
 function gameLoop(timestamp){
@@ -106,9 +109,6 @@ function gameLoop(timestamp){
         return;  
          
     }
-
-     
-
+    
     requestAnimationFrame(gameLoop);
-
 }
