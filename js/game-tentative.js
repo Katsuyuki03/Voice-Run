@@ -16,6 +16,9 @@ let ctx = canvas.getContext("2d");
 let backImg = document.getElementById("img_back"); //背景
 
 
+let startButton =getElementById("js-btn-start");
+let againButton = getElementById("js-btn-again");
+
 const GAME_WIDTH = 800;　//ゲームキャンバスの幅
 const GAME_HEIGHT = 500;　//ゲームキャンバスの高さ
 
@@ -112,3 +115,9 @@ function gameLoop(timestamp){
     
     requestAnimationFrame(gameLoop);
 }
+startButton.addEventListener(`click`, () =>{
+    console.log(`click されました`);
+});
+startButton.addEventListener('click', () => {
+    console.log('click されました');
+});
