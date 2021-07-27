@@ -17,8 +17,20 @@ let backImg = document.getElementById("img_back"); //背景
 
 
 let startButton = document.getElementById("js-btn-start");
-let againButton = document.getElementById("js-btn-again");
 
+
+
+let againButton = document.getElementById("js-btn-again");
+    againButton.addEventListener(`click`, () =>{ 
+        score = 0;
+        gamestate = true;
+        lastTime = 0;
+        counter = 0;
+        interval = 0;
+        bomb = [];
+        requestAnimationFrame(gameLoop);
+
+    }
 const GAME_WIDTH = 800;　//ゲームキャンバスの幅
 const GAME_HEIGHT = 500;　//ゲームキャンバスの高さ
 
@@ -56,15 +68,7 @@ startButton.addEventListener(`click`, () => {
 });
 
 
-againButton.addEventListener(`click`, () =>{ 
-    score = 0;
-    gamestate = true;
-    lastTime = 0;
-    counter = 0;
-    interval = 0;
-    bomb = [];
-    requestAnimationFrame(gameLoop);
-});
+
 
 
 function gameLoop(timestamp){
@@ -125,10 +129,11 @@ function gameLoop(timestamp){
     //ゲーム状態がfalseだったらゲームをストップ
     if(!gamestate){
         return;
-        
+    
     }
+    
+            
+    
     
     requestAnimationFrame(gameLoop);
 }
-
-
