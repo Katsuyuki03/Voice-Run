@@ -56,7 +56,7 @@ function setup() {
 
 startButton.addEventListener(`click`, () => {
     userStartAudio();
-    startButton.classList.remove('btn-hidden');
+    startButton.classList.add('btn-hidden');
     requestAnimationFrame(gameLoop);
 });
 
@@ -67,6 +67,7 @@ againButton.addEventListener(`click`, () => {
     counter = 0;
     interval = 0;
     bomb = [];
+    againButton.classList.add('btn-hidden');
     requestAnimationFrame(gameLoop);
 });
 
