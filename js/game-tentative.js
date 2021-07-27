@@ -16,8 +16,8 @@ let ctx = canvas.getContext("2d");
 let backImg = document.getElementById("img_back"); //背景
 
 
-let startButton =getElementById("js-btn-start");
-let againButton = getElementById("js-btn-again");
+let startButton = document.getElementById("js-btn-start");
+let againButton = document.getElementById("js-btn-again");
 
 const GAME_WIDTH = 800;　//ゲームキャンバスの幅
 const GAME_HEIGHT = 500;　//ゲームキャンバスの高さ
@@ -35,21 +35,36 @@ let counter = 0;
 let interval = 0;　
 
 function setup() {
-    console.log("setup");
-    inputHandler.setup();
+       console.log("setup");
+   inputHandler.setup();
   }
   
   window.setup = setup;
 
-  function mousePressed() {
-    console.log('css/start.css');
+ // function mousePressed() {
+ //   console.log('css/start.css');
+ //   userStartAudio();
+  //  requestAnimationFrame(gameLoop);
+
+//}
+//window.mousePressed = mousePressed;
+
+startButton.addEventListener(`click`, () => {
     userStartAudio();
     requestAnimationFrame(gameLoop);
+    startButton.remove();
+});
 
-}
-window.mousePressed = mousePressed;
 
-
+againButton.addEventListener(`click`, () =>{ 
+    score = 0;
+    gamestate = true;
+    lastTime = 0;
+    counter = 0;
+    interval = 0;
+    bomb = [];
+    requestAnimationFrame(gameLoop);
+});
 
 
 function gameLoop(timestamp){
@@ -109,15 +124,11 @@ function gameLoop(timestamp){
 
     //ゲーム状態がfalseだったらゲームをストップ
     if(!gamestate){
-        return;  
-         
+        return;
+        
     }
     
     requestAnimationFrame(gameLoop);
 }
-startButton.addEventListener(`click`, () =>{
-    console.log(`click されました`);
-});
-startButton.addEventListener('click', () => {
-    console.log('click されました');
-});
+
+
