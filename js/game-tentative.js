@@ -21,16 +21,8 @@ let startButton = document.getElementById("js-btn-start");
 
 
 let againButton = document.getElementById("js-btn-again");
-    againButton.addEventListener(`click`, () =>{ 
-        score = 0;
-        gamestate = true;
-        lastTime = 0;
-        counter = 0;
-        interval = 0;
-        bomb = [];
-        requestAnimationFrame(gameLoop);
+ 
 
-    }
 const GAME_WIDTH = 800;　//ゲームキャンバスの幅
 const GAME_HEIGHT = 500;　//ゲームキャンバスの高さ
 
@@ -49,6 +41,7 @@ let interval = 0;　
 function setup() {
        console.log("setup");
    inputHandler.setup();
+   againButton.classList.add('btn-hidden');
   }
   
   window.setup = setup;
@@ -63,11 +56,19 @@ function setup() {
 
 startButton.addEventListener(`click`, () => {
     userStartAudio();
+    startButton.classList.remove('btn-hidden');
     requestAnimationFrame(gameLoop);
-    startButton.remove();
 });
 
-
+againButton.addEventListener(`click`, () => {
+    score = 0;
+    gamestate = true;
+    lastTime = 0;
+    counter = 0;
+    interval = 0;
+    bomb = [];
+    requestAnimationFrame(gameLoop);
+});
 
 
 
@@ -128,8 +129,8 @@ function gameLoop(timestamp){
 
     //ゲーム状態がfalseだったらゲームをストップ
     if(!gamestate){
+        againButton.classList.remove('btn-hidden');
         return;
-    
     }
     
             

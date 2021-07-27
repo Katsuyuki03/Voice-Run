@@ -13,9 +13,7 @@ html {
   font-size: 62.5%;
 }
 
-.btn,
-a.btn,
-button.btn {
+.btn {
   font-size: 3rem;
   font-weight: 700;
   line-height: 1.5;
