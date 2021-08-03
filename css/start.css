@@ -18,7 +18,7 @@ html {
   font-size: 3rem;
   font-weight: 700;
   line-height: 1.5;
-  position: relative;
+  position: absolute;
   display: inline-block;
   padding: 1rem 4rem;
   cursor: pointer;
@@ -32,8 +32,8 @@ html {
   letter-spacing: 0.1em;
   color: #212529;
   border-radius: 0.5rem;
-  left: 470px;
-  bottom: 250px;
+  left: 300px;
+  top: 220px;
 
 }
 
