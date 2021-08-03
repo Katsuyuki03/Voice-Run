@@ -11,6 +11,7 @@ html {
  
   box-sizing: border-box;
   font-size: 62.5%;
+ 
 }
 
 .btn {
@@ -31,6 +32,9 @@ html {
   letter-spacing: 0.1em;
   color: #212529;
   border-radius: 0.5rem;
+  left: 470px;
+  bottom: 250px;
+
 }
 
 a.btn-border1 {
