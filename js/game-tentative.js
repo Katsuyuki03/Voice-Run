@@ -13,6 +13,11 @@ var score = 0;
 let canvas = document.getElementById("gameScreen");
 let ctx = canvas.getContext("2d");
 
+<div class="outer">
+<div class="inner">
+    </div>
+ </div>
+
 let backImg = document.getElementById("img_back"); //背景
 
 
