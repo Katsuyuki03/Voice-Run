@@ -1,6 +1,7 @@
 import { Dino } from "./human.js";
 import { InputHandler } from "./input2.js";
 import { Bomb } from "./bomb.js";
+import { Toge } from "./toge.js";
 
 //minからmaxまでの範囲でランダムな整数を生成する関数
 export function getRandomInt(min,max){
@@ -30,6 +31,7 @@ let dino = new Dino(GAME_WIDTH,GAME_HEIGHT);
 
 let bomb = [];
 
+let toge = [];
 
 const inputHandler = new InputHandler(dino);
 
@@ -88,6 +90,7 @@ function gameLoop(timestamp){
     counter += deltaTime;
     if(counter > interval){　//800ミリ秒から２秒間隔で爆弾を生成
         bomb.push(new Bomb(GAME_WIDTH,GAME_HEIGHT));
+        toge.push(new Toge(GAME_WIDTH,GAME_HEIGHT));
         counter = 0;
         interval = getRandomInt(800,2000); //インターバルを800ミリ秒から２秒までの乱数に設定
     }
@@ -125,6 +128,40 @@ function gameLoop(timestamp){
         if(bomb[i].offScreen()){
             score++;
             bomb.shift();
+        }
+    }
+
+
+    for(var i = toge.length-1; i>= 0; i--){
+        
+        toge[i].update(deltaTime);
+        toge[i].draw(ctx);
+
+        //とげが人と当たったかどうかの判定
+        if(toge[i].checkHit(dino.position.x,dino.position.y,dino.r,
+            toge[i].position.x,toge[i].position.y,toge[i].r)){
+
+                //もし衝突したらとげクラスで読み込んだ音を出す
+                var playbomb = toge[i].audio.play();
+                //ユーザー操作がなかった時に、DOMExceptionのエラーがおこるため
+                if(playtoge !== undefined){
+                    playtoge.then(_ =>{
+                        
+                    })
+                    .catch(error =>{
+                        console.log(error);
+                    });
+                }
+                
+                gamestate=false;　
+                
+                dino.audio.muted = true; //恐竜のジャンプ音をミュート
+                
+            }
+        //とげの位置がゲーム画面外に出たらとげの配列を削除
+        if(toge[i].offScreen()){
+            score++;
+            toge.shift();
         }
     }
 

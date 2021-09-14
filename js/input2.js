@@ -18,7 +18,7 @@ export class InputHandler{
          this.vol = 0;
          this.dino = dino;
    
-      音声認識バージョン
+      //音声認識バージョン
         // 音声認識を利用するのに SpeechRecognition を利用します
         const speechRecognition = new webkitSpeechRecognition();
    
