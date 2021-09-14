@@ -35,9 +35,14 @@ export class InputHandler{
    
           console.log(transcript);
    
-          if (transcript === "ジャンプ") {
+          if (transcript === "うえ") {
             dino.up();
           }
+
+          if (transcript === "した") {
+            dino.down();
+          }
+
         });
      }
    
