@@ -18,8 +18,7 @@ html {
   font-size: 3rem;
   font-weight: 700;
   line-height: 1.5;
-  position: absolute;
-  display: inline-block;
+  
   padding: 1rem 4rem;
   cursor: pointer;
   
