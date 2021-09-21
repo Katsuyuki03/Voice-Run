@@ -42,6 +42,6 @@ export class Toge{
         ctx.arc(this.position.x+this.r,this.position.y+this.r,this.r,0,2*Math.PI);
         ctx.stroke();*/
         
-        ctx.drawImage(this.image,this.position.x,this.position.y,this.width,this.height);
+        ctx.drawImage(this.image,this.position.x,this.position.y-100,this.width,this.height);
     }
 }

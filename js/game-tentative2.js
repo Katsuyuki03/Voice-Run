@@ -69,6 +69,7 @@ againButton.addEventListener(`click`, () => {
     counter = 0;
     interval = 0;
     bomb = [];
+    toge = [];
     againButton.classList.add('btn-hidden');
     requestAnimationFrame(gameLoop);
 });
