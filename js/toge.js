@@ -9,7 +9,7 @@ export class Toge{
         this.height = this.r*1.5; //高さ
         this.position = {
             x:this.gameWidth,
-            y:this.gameHeight-this.offset-this.height
+            y:this.gameHeight-this.offset-this.height-100
         };
         this.speed = 8;
        
@@ -42,6 +42,6 @@ export class Toge{
         ctx.arc(this.position.x+this.r,this.position.y+this.r,this.r,0,2*Math.PI);
         ctx.stroke();*/
         
-        ctx.drawImage(this.image,this.position.x,this.position.y-100,this.width,this.height);
+        ctx.drawImage(this.image,this.position.x,this.position.y,this.width,this.height);
     }
 }

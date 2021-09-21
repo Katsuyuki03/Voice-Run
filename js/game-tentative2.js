@@ -143,7 +143,7 @@ function gameLoop(timestamp){
             toge[i].position.x,toge[i].position.y,toge[i].r)){
 
                 //もし衝突したらとげクラスで読み込んだ音を出す
-                var playbomb = toge[i].audio.play();
+                var playtoge = toge[i].audio.play();
                 //ユーザー操作がなかった時に、DOMExceptionのエラーがおこるため
                 if(playtoge !== undefined){
                     playtoge.then(_ =>{
