@@ -48,6 +48,25 @@ export class Dino{
         }   
        
     }
+    down(){
+
+        
+
+        if(this.downFlag){
+            
+            this.characterImg.src ="images/syagami.png";
+            this.speed = this.lift;
+            this.frame = 0;
+            this.jumpFlag = false;
+            this.frameCount = 1; 
+            this.audio.play();　//しゃがみをしたときに「bubble-burst2.mp3」音声をplay
+        }   
+       
+    }
+
+
+
+
     update(detlaTime){
        
         this.frame++;
