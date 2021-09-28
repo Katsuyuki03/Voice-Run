@@ -1,4 +1,5 @@
 import { Dino } from "./human.js";
+//import { Dino } from "./syagami.js";
 import { InputHandler } from "./input2.js";
 import { Bomb } from "./bomb.js";
 import { Toge } from "./toge.js";

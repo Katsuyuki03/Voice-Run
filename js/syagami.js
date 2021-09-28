@@ -34,22 +34,22 @@ export class Dino{
         this.characterImg = new Image(); 
         this.characterImg.src = 'images/player.png';
     }
-    up(){
+    
+    down(){
 
         
 
-        if(this.jumpFlag){
+        if(this.downFlag){
             
-            this.characterImg.src ="images/jump.png";
+            this.characterImg.src ="images/syagami.png";
             this.speed = this.lift;
             this.frame = 0;
-            this.jumpFlag = false;
+            this.downFlag = false;
             this.frameCount = 1; 
-            this.audio.play();　//ジャンプをしたときに「bubble-burst1.mp3」音声をplay
+            this.audio.play();　//しゃがみをしたときに「bubble-burst2.mp3」音声をplay
         }   
        
     }
-    
 
 
 
@@ -72,7 +72,7 @@ export class Dino{
             this.position.y = this.gameHeight-this.offset-this.height;
             this.speed = 0;
             this.frameCount = 8;
-            this.jumpFlag = true;
+            this.downFlag = true;
             this.characterImg.src = 'images/player.png';
             
         }

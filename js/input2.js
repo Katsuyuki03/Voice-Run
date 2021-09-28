@@ -30,20 +30,21 @@ export class InputHandler{
  
    //   // 音声認識が成功した時の処理を登録します。
     speechRecognition.addEventListener("result", (event) => {
-       const transcript = event.results[0][0].transcript;
+       const transcript = event.results[event.results.length - 1][0].transcript;
  
-        console.log(transcript);
+        console.log(event.results.length - 1 );
  
-       if (transcript === "うえ") {
+       if (transcript === "うえ" || transcript === "上") {
          dino.up();
        }
 
-     if (transcript === "した") {
-         dino.down();
-       }
+    //  if (transcript === "した"　|| transcript === "下") {
+    //      dino.down();
+    //    }
 
      });
-   }
+     
+    }
  
    setup() {
       //  this.mic = new p5.AudioIn();
