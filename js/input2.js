@@ -19,47 +19,47 @@ export class InputHandler{
  
    // 音声認識バージョン
    //   // 音声認識を利用するのに SpeechRecognition を利用します
-     // const speechRecognition = new webkitSpeechRecognition();
+     const speechRecognition = new webkitSpeechRecognition();
  
-    //  speechRecognition.lang = "ja-JP";
-     // speechRecognition.continuous = true;
-   //   speechRecognition.interimResults = false;
+     speechRecognition.lang = "ja-JP";
+     speechRecognition.continuous = true;
+     speechRecognition.interimResults = false;
  
    //   // 音声認識を開始する
- //     speechRecognition.start();
+      speechRecognition.start();
  
    //   // 音声認識が成功した時の処理を登録します。
-    // speechRecognition.addEventListener("result", (event) => {
-    //    const transcript = event.results[0][0].transcript;
+    speechRecognition.addEventListener("result", (event) => {
+       const transcript = event.results[0][0].transcript;
  
-        //console.log(transcript);
+        console.log(transcript);
  
-      //  if (transcript === "うえ") {
-       //   dino.up();
-     //   }
+       if (transcript === "うえ") {
+         dino.up();
+       }
 
-    //  if (transcript === "した") {
-       //   dino.down();
-     //   }
+     if (transcript === "した") {
+         dino.down();
+       }
 
-   //   });
+     });
    }
  
    setup() {
-       this.mic = new p5.AudioIn();
-       this.mic.start();
-       this.initilized = true;
+      //  this.mic = new p5.AudioIn();
+      //  this.mic.start();
+      //  this.initilized = true;
    }
  
    update() {
-       if (this.initilized) {
-         this.vol = this.mic.getLevel();
-         console.log(this.vol);
-       }
+      //  if (this.initilized) {
+      //    this.vol = this.mic.getLevel();
+      //    console.log(this.vol);
+      //  }
  
-       if (this.vol > 0.2) {
-           this.dino.down();
-       }
+      //  if (this.vol > 0.2) {
+      //      this.dino.down();
+      //  }
  
             
          
