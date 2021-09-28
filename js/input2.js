@@ -58,7 +58,7 @@ export class InputHandler{
        }
  
        if (this.vol > 0.2) {
-           this.dino.up();
+           this.dino.down();
        }
  
             

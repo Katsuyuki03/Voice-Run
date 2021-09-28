@@ -14,6 +14,7 @@ export class Dino{
         this.gravity = 0.5;
         this.lift = -12;
         this.jumpFlag = true;
+        this.downFlag = true;
         this.audio = new Audio();   
     
         this.frame = 0;
@@ -57,7 +58,7 @@ export class Dino{
             this.characterImg.src ="images/syagami.png";
             this.speed = this.lift;
             this.frame = 0;
-            this.jumpFlag = false;
+            this.downFlag = false;
             this.frameCount = 1; 
             this.audio.play();　//しゃがみをしたときに「bubble-burst2.mp3」音声をplay
         }   
@@ -86,6 +87,7 @@ export class Dino{
             this.speed = 0;
             this.frameCount = 8;
             this.jumpFlag = true;
+            this.downFlag =  true;
             this.characterImg.src = 'images/player.png';
             
         }
