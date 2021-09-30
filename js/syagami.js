@@ -13,7 +13,6 @@ export class Dino{
         this.speed = 0;
         this.gravity = 0.5;
         this.lift = -12;
-        this.jumpFlag = true;
         this.downFlag = true;
         this.audio = new Audio();   
     
