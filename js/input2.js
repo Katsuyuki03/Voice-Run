@@ -32,7 +32,7 @@ export class InputHandler{
     speechRecognition.addEventListener("result", (event) => {
        const transcript = event.results[event.results.length - 1][0].transcript;
  
-        console.log(event.results.length - 1 );
+        console.log(transcript);
  
        if (transcript === "うえ" || transcript === "上") {
          dino.up();
