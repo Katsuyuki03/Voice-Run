@@ -58,7 +58,7 @@ export class Dino{
         this.frame++;
         
         this.position.y += this.speed;
-        this.speed += this.gravity;
+        
 
         if (this.frame % 6 === 0) { 
             this.curFrame = ++this.curFrame % this.frameCount; 
