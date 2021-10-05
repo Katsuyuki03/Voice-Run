@@ -76,22 +76,37 @@ export class Dino{
         this.position.y += this.speed;
         this.speed += this.gravity;
 
-        if (this.frame % 6 === 0) { 
+        if (this.frame % 8 === 0) { 
             this.curFrame = ++this.curFrame % this.frameCount; 
             this.srcX = this.curFrame * this.width;
         }
 
         /*もし恐竜の位置が初期位置（this.gameHeight-this.offset-this.height）より大きい場合、
         位置を初期位置にする*/
-        if(this.position.y >= this.gameHeight-this.offset-this.height){
-            this.position.y = this.gameHeight-this.offset-this.height;
-            this.speed = 0;
-            this.frameCount = 8;
-            this.jumpFlag = true;
-            this.jumpFlag = true;
-            this.characterImg.src = 'images/player.png';
-            
-        }
+        // if(this.position.y >= this.gameHeight-this.offset-this.height){
+        //     this.position.y = this.gameHeight-this.offset-this.height;
+        //     this.speed = 0;
+        //     this.frameCount = 8;
+        //     this.jumpFlag = true;
+        //     this.downFlag = true;
+        //     this.characterImg.src = 'images/player.png';
+        //}
+
+        if(
+            this.downFlag && this.position.y >=this.gameHeight - this.offset - this.height){
+                this.position.y=this.gameHeight - this.offset - this.height;
+                this.speed=0;
+                this.frameCount = 8;
+                this.junpFlag = true;
+                this.characterImg.src = 'images/player.png';
+            }else{
+                this.position.y=this.gameHeight - this.offset - this.height;
+                
+                if(this.frame>240){
+                    this.downFlag = true;
+                }
+            }
+        
 
 
 
