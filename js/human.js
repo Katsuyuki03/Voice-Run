@@ -58,7 +58,7 @@ export class Dino{
         if(this.downFlag){
             
             this.characterImg.src ="images/syagami.png";
-            this.speed = this.position.y;
+            this.speed = this.lift;
             this.frame = 0;
             this.downFlag = false;
             this.frameCount = 1; 
@@ -87,6 +87,7 @@ export class Dino{
             this.position.y = this.gameHeight-this.offset-this.height;
             this.speed = 0;
             this.frameCount = 8;
+            this.jumpFlag = true;
             this.jumpFlag = true;
             this.characterImg.src = 'images/player.png';
             
