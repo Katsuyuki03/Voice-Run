@@ -38,9 +38,9 @@ export class InputHandler{
          dino.up();
        }
 
-    //  if (transcript === "した"　|| transcript === "下") {
-    //      dino.down();
-    //    }
+     if (transcript === "した。"　|| transcript === "下。" || transcript === "した" || transcript === "下") {
+         dino.down();
+       }
 
      });
      
