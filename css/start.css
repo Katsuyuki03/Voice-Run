@@ -44,6 +44,9 @@ a.btn-border1 {
   transition: all 0.3s;
 
   border-radius: 0;
+
+  position:relative;
+  display:block;
 }
 
 a.btn-border1 span {
