@@ -5,13 +5,14 @@
 *:after {
   
   box-sizing: inherit;
+  
 }
 
 html {
  
   box-sizing: border-box;
   font-size: 62.5%;
- 
+  
 }
 
 .btn {
@@ -29,7 +30,7 @@ html {
   vertical-align: middle;
   text-decoration: none;
   letter-spacing: 0.1em;
-  color: #212529;
+  color: #14175A;
   border-radius: 0.5rem;
   
 
@@ -52,10 +53,10 @@ a.btn-border1 span {
 
   padding: 1.25rem 3rem;
 
-  color: #000;
-  border: 2px solid #000;
+  color: #14175A;
+  border: 2px solid #14175A;
   border-radius: 0.5rem;
-  background: #fff;
+  background: rgb(255, 255, 255);
 }
 
 a.btn-border1:before {
@@ -72,20 +73,20 @@ a.btn-border1:before {
   
   transition: all 0.3s;
 
-  border: 2px solid #000;
-  border-top: 1px solid #000;
+  border: 2px solid #14175A;
+  border-top: 1px solid #14175A;
   border-radius: 0 0 0.5rem 0.5rem;
   background-image: -webkit-repeating-linear-gradient(
     135deg,
-    #000,
-    #000 1px,
+    #14175A,
+    #14175A 1px,
     transparent 2px,
     transparent 5px
   );
   background-image: repeating-linear-gradient(
     -45deg,
-    #000,
-    #000 1px,
+    #14175A,
+    #14175A 1px,
     transparent 2px,
     transparent 5px
   );
