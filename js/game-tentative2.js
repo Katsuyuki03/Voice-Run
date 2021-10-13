@@ -14,7 +14,7 @@ var score = 0;
 let canvas = document.getElementById("gameScreen");
 let ctx = canvas.getContext("2d");
 
-let titleImg = document.getElementById("btn-list");
+let titleImg = document.getElementById("js-btn-list");
 
 let backImg = document.getElementById("img_back"); //背景
 
@@ -61,7 +61,7 @@ function setup() {
 startButton.addEventListener(`click`, () => {
     userStartAudio();
     startButton.classList.add('btn-hidden');
-    titleImg.classList.add('background-image-hidden');
+    titleImg.classList.add('btn-list-hidden');
     requestAnimationFrame(gameLoop);
 });
 
@@ -74,6 +74,7 @@ againButton.addEventListener(`click`, () => {
     bomb = [];
     toge = [];
     againButton.classList.add('btn-hidden');
+    titleImg.classList.add('btn-list-hidden');
     requestAnimationFrame(gameLoop);
 });
 
@@ -177,6 +178,7 @@ function gameLoop(timestamp){
     //ゲーム状態がfalseだったらゲームをストップ
     if(!gamestate){
         againButton.classList.remove('btn-hidden');
+        titleImg.classList.remove('btn-list-hidden');
         return;
     }
     
