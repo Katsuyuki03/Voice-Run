@@ -11,18 +11,22 @@
 
 .inner{
   position: relative;
+  
 }
 
 .btn-list{
 background-image:url("../images/title.png");
+position:absolute;
 width:100%;
 height:100%;
-position:absolute;
+
 top:0;
 left:0;
 
-z-index:1;
 }
+
+
+
 
 /* .btn-list が非表示の時のスタイル */
 .btn-list-hidden {

@@ -37,7 +37,7 @@ html {
 }
 
 a.btn-border1 {
-  margin-bottom: 12px;
+  margin-bottom: 12;
   padding: 0;
 
  
@@ -47,6 +47,10 @@ a.btn-border1 {
 
   position:relative;
   display:block;
+
+  width:50%;
+  top:80%;
+  left:200px;
 }
 
 a.btn-border1 span {
