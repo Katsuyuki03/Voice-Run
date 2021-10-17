@@ -4,7 +4,9 @@
   align-items: center;
 
   height:100%;
-  top:50%;
+    /* ▼ これは position プロパティの値に static 以外が指定されていないと有効にならない */
+  /* 参照: https://developer.mozilla.org/ja/docs/Web/CSS/position#values */
+  /* top:50%; */
 }
 
 .inner{
@@ -20,4 +22,9 @@ top:0;
 left:0;
 
 z-index:1;
+}
+
+/* .btn-list が非表示の時のスタイル */
+.btn-list-hidden {
+  display: none;
 }
