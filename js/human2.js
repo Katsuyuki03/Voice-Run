@@ -14,7 +14,7 @@ export class Dino{
         this.gravity = 0.5;
         this.lift = -12;
         this.jumpFlag = true;
-        
+        this.downFlag = true;
         this.audio = new Audio();   
     
         this.frame = 0;
@@ -51,8 +51,21 @@ export class Dino{
     }
 
 
+    down(){
+
+        
+
+        if(this.downFlag){
+            
+            this.characterImg.src ="images/syagami.png";
+            this.speed = this.lift;
+            this.frame = 0;
+            this.downFlag = false;
+            this.frameCount = 1; 
+            this.audio.play();　//しゃがみをしたときに「bubble-burst2.mp3」音声をplay
+        }   
        
-   
+    }
 
     
 
@@ -70,15 +83,29 @@ export class Dino{
 
         /*もし恐竜の位置が初期位置（this.gameHeight-this.offset-this.height）より大きい場合、
         位置を初期位置にする*/
-        if(this.position.y >= this.gameHeight-this.offset-this.height){
-            this.position.y = this.gameHeight-this.offset-this.height;
-            this.speed = 0;
-            this.frameCount = 8;
-            this.jumpFlag = true;
-            this.characterImg.src = 'images/player.png';
-        }
+        // if(this.position.y >= this.gameHeight-this.offset-this.height){
+        //     this.position.y = this.gameHeight-this.offset-this.height;
+        //     this.speed = 0;
+        //     this.frameCount = 8;
+        //     this.jumpFlag = true;
+        //     this.downFlag = true;
+        //     this.characterImg.src = 'images/player.png';
+        //}
 
-       
+        if(
+            this.downFlag && this.position.y >=this.gameHeight - this.offset - this.height){
+                this.position.y=this.gameHeight - this.offset - this.height;
+                this.speed=0;
+                this.frameCount = 8;
+                this.junpFlag = true;
+                this.characterImg.src = 'images/player.png';
+            }else{
+                this.position.y=this.gameHeight - this.offset - this.height;
+                
+                if(this.frame>80){
+                    this.downFlag = true;
+                }
+            }
         
 
 

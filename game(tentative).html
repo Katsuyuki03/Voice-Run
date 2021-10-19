@@ -18,7 +18,7 @@
 
 
         
-        .btn-hidden{
+        a.btn-hidden{
             display: none;
             
         }
@@ -28,10 +28,11 @@
 
        <div class="outer">
             <div class="inner">
-        
-    <div class="btn-list">
+        <!-- ▼ js から要素を操作するように専用の ID 付与した -->
+    <div id="js-btn-list" class="btn-list">
 
         <a id="js-btn-start"  class="btn btn-border1"><span>start</span></a>
+
         <a id="js-btn-again"  class="btn btn-border1"><span>continue</span></a>
         
     </div>
@@ -43,7 +44,7 @@
              </div>
       
        
-        <canvas id='canvas'></canvas>
+       
         <script src="js/p5.min.js"></script>
         <script src="js/addons/p5.sound.js"></script>
         <script src="js/game-tentative.js" type="module"></script>

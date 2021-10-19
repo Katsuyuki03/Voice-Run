@@ -13,7 +13,7 @@ var score = 0;
 let canvas = document.getElementById("gameScreen");
 let ctx = canvas.getContext("2d");
 
-
+let titleImg = document.getElementById("js-btn-list");
 
 let backImg = document.getElementById("img_back"); //背景
 
@@ -59,6 +59,7 @@ function setup() {
 startButton.addEventListener(`click`, () => {
     userStartAudio();
     startButton.classList.add('btn-hidden');
+    titleImg.classList.add('btn-list-hidden');
     requestAnimationFrame(gameLoop);
 });
 
@@ -69,7 +70,8 @@ againButton.addEventListener(`click`, () => {
     counter = 0;
     interval = 0;
     bomb = [];
-    againButton.classList.add('btn-hidden');
+    againButton.classList.add('btn-list-hidden');
+    titleImg.classList.add('btn-list-hidden');
     requestAnimationFrame(gameLoop);
 });
 
@@ -88,6 +90,7 @@ function gameLoop(timestamp){
     dino.draw(ctx);
 
     counter += deltaTime;
+    
     if(counter > interval){　//800ミリ秒から２秒間隔で爆弾を生成
         bomb.push(new Bomb(GAME_WIDTH,GAME_HEIGHT));
         counter = 0;
@@ -133,6 +136,7 @@ function gameLoop(timestamp){
     //ゲーム状態がfalseだったらゲームをストップ
     if(!gamestate){
         againButton.classList.remove('btn-hidden');
+        titleImg.classList.remove('btn-list-hidden');
         return;
     }
     
