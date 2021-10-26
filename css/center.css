@@ -15,7 +15,20 @@
 }
 
 .btn-list{
-background-image:url("../images/title.png");
+  background-image:url("../images/title.png");
+  position:absolute;
+  width:100%;
+  height:100%;
+  
+  top:0;
+  left:0;
+  
+  }
+  
+
+
+.btn-list2{
+background-image:url("../images/title2.png");
 position:absolute;
 width:100%;
 height:100%;
