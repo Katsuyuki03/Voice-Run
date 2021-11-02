@@ -56,14 +56,14 @@ function setup() {
 //}
 //window.mousePressed = mousePressed;
 
-startButton.addEventListener(`click`, () => {
-    // inputHandler.mic.start();
-    // inputHandler.initilized = true;
-    userStartAudio();
-    startButton.classList.add('btn-hidden');
-    titleImg.classList.add('btn-list-hidden');
-    gameLoop();
-    // requestAnimationFrame(gameLoop);
+startButton.addEventListener(`touchstart`, () => {
+  // inputHandler.mic.start();
+  // inputHandler.initilized = true;
+  userStartAudio();
+  startButton.classList.add("btn-hidden");
+  titleImg.classList.add("btn-list-hidden");
+  gameLoop();
+  // requestAnimationFrame(gameLoop);
 });
 
 againButton.addEventListener(`click`, () => {
