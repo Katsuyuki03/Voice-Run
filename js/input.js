@@ -44,7 +44,7 @@ export class InputHandler{
   setup() {
     this.mic = new p5.AudioIn();
     // this.mic.start();
-    this.initilized = true;
+    // this.initilized = true;
 }
 
   update() {
