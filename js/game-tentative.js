@@ -57,6 +57,7 @@ function setup() {
 //window.mousePressed = mousePressed;
 
 startButton.addEventListener(`click`, () => {
+    inputHandler.mic.start();
     userStartAudio();
     startButton.classList.add('btn-hidden');
     titleImg.classList.add('btn-list-hidden');
