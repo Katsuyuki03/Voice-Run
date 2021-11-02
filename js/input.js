@@ -10,36 +10,36 @@ export class InputHandler{
     mic.start();
   }
 
-    
-    constructor(dino){
+  constructor(dino){
         
-      this.initilized = false;
-      this.mic;
-      this.vol = 0;
-      this.dino = dino;
+    this.initilized = false;
+    this.mic;
+    this.vol = 0;
+    this.dino = dino;
 
-  // 音声認識バージョン
-  //   // 音声認識を利用するのに SpeechRecognition を利用します
-    // const speechRecognition = new webkitSpeechRecognition();
+// 音声認識バージョン
+//   // 音声認識を利用するのに SpeechRecognition を利用します
+  // const speechRecognition = new webkitSpeechRecognition();
 
-   //  speechRecognition.lang = "ja-JP";
-    // speechRecognition.continuous = true;
-  //   speechRecognition.interimResults = false;
+ //  speechRecognition.lang = "ja-JP";
+  // speechRecognition.continuous = true;
+//   speechRecognition.interimResults = false;
 
-  //   // 音声認識を開始する
+//   // 音声認識を開始する
 //     speechRecognition.start();
 
-  //   // 音声認識が成功した時の処理を登録します。
-   // speechRecognition.addEventListener("result", (event) => {
-   //    const transcript = event.results[0][0].transcript;
+//   // 音声認識が成功した時の処理を登録します。
+ // speechRecognition.addEventListener("result", (event) => {
+ //    const transcript = event.results[0][0].transcript;
 
-       //console.log(transcript);
+     //console.log(transcript);
 
-     //  if (transcript === "ジャンプ") {
-      //   dino.up();
-    //   }
-  //   });
-  }
+   //  if (transcript === "ジャンプ") {
+    //   dino.up();
+  //   }
+//   });
+}
+    
 
   setup() {
     this.mic = new p5.AudioIn();

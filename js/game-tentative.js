@@ -84,7 +84,7 @@ function gameLoop(timestamp){
     lastTime = timestamp;
 
     ctx.drawImage(backImg,0,0,GAME_WIDTH,GAME_HEIGHT); //背景の描写 
-
+    
     inputHandler.update();
 
 
