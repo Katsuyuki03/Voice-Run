@@ -43,8 +43,8 @@ export class InputHandler{
 
   setup() {
       this.mic = new p5.AudioIn();
-      this.mic.start();
-      this.initilized = true;
+      // this.mic.start();
+      // this.initilized = true;
   }
 
   update() {
@@ -54,6 +54,7 @@ export class InputHandler{
       }
 
       if (this.vol > 0.2) {
+        alert('音声入力確認')
           this.dino.up();
       }
 

@@ -58,9 +58,12 @@ function setup() {
 
 startButton.addEventListener(`click`, () => {
     userStartAudio();
+    inputHandler.mic.start();
+    inputHandler.initilized = true;
     startButton.classList.add('btn-hidden');
     titleImg.classList.add('btn-list-hidden');
-    requestAnimationFrame(gameLoop);
+    gameLoop();
+    // requestAnimationFrame(gameLoop);
 });
 
 againButton.addEventListener(`click`, () => {
@@ -72,73 +75,74 @@ againButton.addEventListener(`click`, () => {
     bomb = [];
     againButton.classList.add('btn-list-hidden');
     titleImg.classList.add('btn-list-hidden');
-    requestAnimationFrame(gameLoop);
+    gameLoop();
+    // requestAnimationFrame(gameLoop);
 });
 
 
 
 function gameLoop(timestamp){
-    let deltaTime = timestamp -lastTime;
-    lastTime = timestamp;
+    // let deltaTime = timestamp -lastTime;
+    // lastTime = timestamp;
 
-    ctx.drawImage(backImg,0,0,GAME_WIDTH,GAME_HEIGHT); //背景の描写 
+    // ctx.drawImage(backImg,0,0,GAME_WIDTH,GAME_HEIGHT); //背景の描写 
 
     inputHandler.update();
 
 
-    dino.update(deltaTime); 
-    dino.draw(ctx);
+    // dino.update(deltaTime); 
+    // dino.draw(ctx);
 
-    counter += deltaTime;
+    // counter += deltaTime;
     
-    if(counter > interval){　//800ミリ秒から２秒間隔で爆弾を生成
-        bomb.push(new Bomb(GAME_WIDTH,GAME_HEIGHT));
-        counter = 0;
-        interval = getRandomInt(800,2000); //インターバルを800ミリ秒から２秒までの乱数に設定
-    }
+    // if(counter > interval){　//800ミリ秒から２秒間隔で爆弾を生成
+    //     bomb.push(new Bomb(GAME_WIDTH,GAME_HEIGHT));
+    //     counter = 0;
+    //     interval = getRandomInt(800,2000); //インターバルを800ミリ秒から２秒までの乱数に設定
+    // }
 
-    ctx.font = "40px sans-serif";　　　　　//スコアとして表示する文字の大きさとフォント
-    ctx.fillText("Score:"+score,60,60);  //スコアを（60,60）の位置に表示する
+    // ctx.font = "40px sans-serif";　　　　　//スコアとして表示する文字の大きさとフォント
+    // ctx.fillText("Score:"+score,60,60);  //スコアを（60,60）の位置に表示する
 
-    for(var i = bomb.length-1; i>= 0; i--){
+    // for(var i = bomb.length-1; i>= 0; i--){
         
-        bomb[i].update(deltaTime);
-        bomb[i].draw(ctx);
+    //     bomb[i].update(deltaTime);
+    //     bomb[i].draw(ctx);
 
-        //爆弾が恐竜と当たったかどうかの判定
-        if(bomb[i].checkHit(dino.position.x,dino.position.y,dino.r,
-            bomb[i].position.x,bomb[i].position.y,bomb[i].r)){
+    //     //爆弾が恐竜と当たったかどうかの判定
+    //     if(bomb[i].checkHit(dino.position.x,dino.position.y,dino.r,
+    //         bomb[i].position.x,bomb[i].position.y,bomb[i].r)){
 
-                //もし衝突したら爆弾クラスで読み込んだ音を出す
-                var playbomb = bomb[i].audio.play();
-                //ユーザー操作がなかった時に、DOMExceptionのエラーがおこるため
-                if(playbomb !== undefined){
-                    playbomb.then(_ =>{
+    //             //もし衝突したら爆弾クラスで読み込んだ音を出す
+    //             var playbomb = bomb[i].audio.play();
+    //             //ユーザー操作がなかった時に、DOMExceptionのエラーがおこるため
+    //             if(playbomb !== undefined){
+    //                 playbomb.then(_ =>{
                         
-                    })
-                    .catch(error =>{
-                        console.log(error);
-                    });
-                }
+    //                 })
+    //                 .catch(error =>{
+    //                     console.log(error);
+    //                 });
+    //             }
                 
-                gamestate=false;　
+    //             gamestate=false;　
                 
-                dino.audio.muted = true; //恐竜のジャンプ音をミュート
+    //             dino.audio.muted = true; //恐竜のジャンプ音をミュート
                 
-            }
-        //爆弾の位置がゲーム画面外に出たら爆弾の配列を削除
-        if(bomb[i].offScreen()){
-            score++;
-            bomb.shift();
-        }
-    }
+    //         }
+    //     // 爆弾の位置がゲーム画面外に出たら爆弾の配列を削除
+    //     if(bomb[i].offScreen()){
+    //         score++;
+    //         bomb.shift();
+    //     }
+    // }
 
-    //ゲーム状態がfalseだったらゲームをストップ
-    if(!gamestate){
-        againButton.classList.remove('btn-hidden');
-        titleImg.classList.remove('btn-list-hidden');
-        return;
-    }
+    // //ゲーム状態がfalseだったらゲームをストップ
+    // if(!gamestate){
+    //     againButton.classList.remove('btn-hidden');
+    //     titleImg.classList.remove('btn-list-hidden');
+    //     return;
+    // }
     
             
     
