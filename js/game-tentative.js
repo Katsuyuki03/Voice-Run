@@ -57,9 +57,9 @@ function setup() {
 //window.mousePressed = mousePressed;
 
 startButton.addEventListener(`click`, () => {
-    userStartAudio();
     inputHandler.mic.start();
     inputHandler.initilized = true;
+    userStartAudio();
     startButton.classList.add('btn-hidden');
     titleImg.classList.add('btn-list-hidden');
     gameLoop();
@@ -78,7 +78,6 @@ againButton.addEventListener(`click`, () => {
     gameLoop();
     // requestAnimationFrame(gameLoop);
 });
-
 
 
 function gameLoop(timestamp){
