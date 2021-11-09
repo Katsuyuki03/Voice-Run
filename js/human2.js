@@ -7,8 +7,8 @@ export class Dino{
         this.width = this.r*2;
         this.height = this.r*3;
         this.position = {
-            x:60,
-            y:this.gameHeight-this.offset-this.height
+            x: 60,
+            y: this.gameHeight-this.offset-this.height
         };
         this.speed = 0;
         this.gravity = 0.5;
@@ -34,47 +34,34 @@ export class Dino{
         this.characterImg = new Image(); 
         this.characterImg.src = 'images/player.png';
     }
-    up(){
 
-        
-
-        if(this.jumpFlag){
-            
+    up() {
+        if (this.jumpFlag && this.downFlag) {
             this.characterImg.src ="images/jump.png";
             this.speed = this.lift;
             this.frame = 0;
             this.jumpFlag = false;
             this.frameCount = 1; 
             this.audio.play();　//ジャンプをしたときに「bubble-burst1.mp3」音声をplay
-        }   
-       
+        }
     }
 
 
-    down(){
-
-        
-
-        if(this.downFlag){
-            
-            this.characterImg.src ="images/syagami.png";
-            this.speed = this.lift;
+    down() {
+        if (this.jumpFlag && this.downFlag) {
+            this.characterImg.src = "images/syagami.png";
+            this.speed = 0;
             this.frame = 0;
             this.downFlag = false;
-            this.frameCount = 1; 
-            this.audio.play();　//しゃがみをしたときに「bubble-burst2.mp3」音声をplay
-        }   
-       
+            this.frameCount = 1;
+            this.audio.play(); //しゃがみをしたときに「bubble-burst2.mp3」音声をplay
+        }
     }
 
     
 
     update(detlaTime){
-       
         this.frame++;
-        
-        this.position.y += this.speed;
-        this.speed += this.gravity;
 
         if (this.frame % 8 === 0) { 
             this.curFrame = ++this.curFrame % this.frameCount; 
@@ -92,30 +79,31 @@ export class Dino{
         //     this.characterImg.src = 'images/player.png';
         //}
 
-        if(
-            this.downFlag && this.position.y >=this.gameHeight - this.offset - this.height){
-                this.position.y=this.gameHeight - this.offset - this.height;
-                this.speed=0;
-                this.frameCount = 8;
-                this.junpFlag = true;
-                this.characterImg.src = 'images/player.png';
-            }else{
-                this.position.y=this.gameHeight - this.offset - this.height;
-                
-                if(this.frame>80){
-                    this.downFlag = true;
-                }
+        if (!this.jumpFlag && this.downFlag) {
+            this.position.y += this.speed;
+            this.speed += this.gravity;
+
+            if (this.position.y >= this.gameHeight - this.offset - this.height) {
+              this.speed = 0;
+              this.jumpFlag = true;
+              this.frameCount = 8;
+              this.characterImg.src = "images/player.png";
             }
-        
-
-
-
+        } else if (this.jumpFlag && !this.downFlag) {
+            this.height = this.r * 2;
+            this.position.y = this.gameHeight - this.offset - this.height
+            
+            if (this.frame > 60) {
+                this.height = this.r * 3;
+                this.position.y = this.gameHeight - this.offset - this.height;
+                this.downFlag = true;
+                this.frameCount = 8;
+                this.characterImg.src = "images/player.png";
+            }
+        } else {
+          this.position.y = this.gameHeight - this.offset - this.height;
+        }
     }
-
-    
-
-    
-
 
     draw(ctx){
         /*ctx.beginPath();
@@ -131,6 +119,6 @@ export class Dino{
             this.position.y,
             this.width,
             this.height
-          );
+        );
     }
 }
