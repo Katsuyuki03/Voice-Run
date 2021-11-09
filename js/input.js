@@ -3,7 +3,7 @@ export class InputHandler{
 
  setup() {
  // // Create an Audio input
-   mic = new p51.AudioIn();
+   mic = new p5.AudioIn();
   
  //   // start the Audio Input.
  //  // By default, it does not .connect() (to the computer speakers)
@@ -42,7 +42,7 @@ export class InputHandler{
     
 
   setup() {
-    this.mic = new p51.AudioIn();
+    this.mic = new p5.AudioIn();
     // this.mic.start();
     // this.initilized = true;
 }
