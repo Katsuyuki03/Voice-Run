@@ -38,7 +38,7 @@ const inputHandler = new InputHandler(dino);
 
 let lastTime = 0;
 let counter = 0;
-let interval = 0;　
+let interval = 5000;　
 
 function setup() {
        console.log("setup");
@@ -70,7 +70,7 @@ againButton.addEventListener(`click`, () => {
     gamestate = true;
     lastTime = 0;
     counter = 0;
-    interval = 0;
+    interval = 5000;
     bomb = [];
     againButton.classList.add('btn-list-hidden');
     titleImg.classList.add('btn-list-hidden');
@@ -137,8 +137,10 @@ function gameLoop(timestamp){
 
     //ゲーム状態がfalseだったらゲームをストップ
     if(!gamestate){
+        
         againButton.classList.remove('btn-hidden');
         titleImg.classList.remove('btn-list-hidden');
+        
         return;
     }
     

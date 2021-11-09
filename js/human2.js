@@ -11,6 +11,8 @@ export class Dino{
             y:this.gameHeight-this.offset-this.height
         };
         this.speed = 0;
+        this.jumpTimer = 0;
+        this.yv = 10;
         this.gravity = 0.5;
         this.lift = -12;
         this.jumpFlag = true;
@@ -90,11 +92,13 @@ export class Dino{
         //     this.jumpFlag = true;
         //     this.downFlag = true;
         //     this.characterImg.src = 'images/player.png';
-        //}
+        // }
 
         if(
-            this.downFlag && this.position.y >=this.gameHeight - this.offset - this.height){
-                this.position.y=this.gameHeight - this.offset - this.height;
+             this.position.y >=this.gameHeight - this.offset - this.height){
+                this.position.y=
+                this.gameHeight - this.offset - this.height;
+                
                 this.speed=0;
                 this.frameCount = 8;
                 this.junpFlag = true;
@@ -112,7 +116,7 @@ export class Dino{
 
     }
 
-    
+
 
     
 
