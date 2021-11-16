@@ -9,7 +9,7 @@ export class Toge{
         this.height = this.r*1.5; //高さ
         this.position = {
             x:this.gameWidth,
-            y:this.gameHeight-this.offset-this.height-100
+            y:this.gameHeight-this.offset-this.height-150
         };
         this.speed = 8;
        
