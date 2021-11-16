@@ -18,27 +18,21 @@ export class Dino{
         this.jumpFlag = true;
         this.downFlag = true;
         this.audio = new Audio();   
-    
         this.frame = 0;
-    
         this.spriteWidth = 800; 
         this.spriteHeight = 300; 
-
         this.rows = 2;
         this.cols = 8;
-
         this.curFrame = 0; 
         this.frameCount = 8; 
-
         this.srcX = 0; 
         this.srcY = 0; 
-        
         this.characterImg = new Image(); 
         this.characterImg.src = 'images/player.png';
     }
     up(){
 
-        if(this.jumpFlag&& this.downFlag){
+        if(this.jumpFlag && this.downFlag){
             
             this.characterImg.src ="images/jump.png";
             this.speed = this.lift;
@@ -53,9 +47,7 @@ export class Dino{
 
     down(){
 
-        
-
-        if(this.jumpFlag&&this.downFlag){
+        if(this.jumpFlag && this.downFlag){
             
             this.characterImg.src ="images/syagami.png";
             this.speed = 0;
@@ -70,7 +62,7 @@ export class Dino{
     update(detlaTime){
        
         this.frame++;
-        
+
         if (this.frame % 8 === 0) { 
             this.curFrame = ++this.curFrame % this.frameCount; 
             this.srcX = this.curFrame * this.width;
@@ -91,28 +83,25 @@ export class Dino{
             this.speed += this.gravity;
 
             if (this.position.y >= this.gameHeight - this.offset - this.height) {
-                this.speed = 0;
-                this.frameCount = 8;
-                this.junpFlag = true;
-                this.characterImg.src = 'images/player.png';
-            } else if (this.jumpFlag && !this.downFlag) {
-                this.height = this.r * 2;
-                this.position.y = this.gameHeight - this.offset - this.height
-    
-                if (this.frame > 60) {
-                    this.height = this.r * 3;
-                    this.position.y = this.gameHeight - this.offset - this.height;
-                    this.downFlag = true;
-                    this.frameCount = 8;
-                    this.characterImg.src = "images/player.png";
+              this.speed = 0;
+              this.jumpFlag = true;
+              this.frameCount = 8;
+              this.characterImg.src = "images/player.png";
             }
-        
+        } else if (this.jumpFlag && !this.downFlag) {
+            this.height = this.r * 2;
+            this.position.y = this.gameHeight - this.offset - this.height
+
+            if (this.frame > 60) {
+                this.height = this.r * 3;
+                this.position.y = this.gameHeight - this.offset - this.height;
+                this.downFlag = true;
+                this.frameCount = 8;
+                this.characterImg.src = "images/player.png";
+            }
         } else {
             this.position.y = this.gameHeight - this.offset - this.height;
           }
-      }
-
-
     }
 
 
