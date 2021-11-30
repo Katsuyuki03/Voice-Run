@@ -1,5 +1,4 @@
 export class InputHandler{
-
   setup() {
   // // Create an Audio input
     // mic = new p5.AudioIn();
@@ -8,7 +7,7 @@ export class InputHandler{
   //  // By default, it does not .connect() (to the computer speakers)
     //  mic.start();
    }
- 
+
   speech() {
     // 音声認識バージョン
     // 音声認識を利用するのに SpeechRecognition を利用します
@@ -60,31 +59,31 @@ export class InputHandler{
   }
 
      constructor(dino){
+
        this.initilized = false;
        this.mic;
        this.vol = 0;
        this.dino = dino;
-
        this.speech();
-    }
- 
-   setup() {
-      //  this.mic = new p5.AudioIn();
-      //  this.mic.start();
-      //  this.initilized = true;
-   }
- 
-   update() {
-      //  if (this.initilized) {
-      //    this.vol = this.mic.getLevel();
-      //    console.log(this.vol);
-      //  }
- 
-      //  if (this.vol > 0.2) {
-      //      this.dino.down();
-      //  }
- 
-            
-         
+      }
+  
+     setup() {
+        //  this.mic = new p5.AudioIn();
+        //  this.mic.start();
+        //  this.initilized = true;
      }
- }
+   
+     update() {
+        //  if (this.initilized) {
+        //    this.vol = this.mic.getLevel();
+        //    console.log(this.vol);
+        //  }
+   
+        //  if (this.vol > 0.2) {
+        //      this.dino.down();
+        //  }
+   
+              
+           
+       }
+   }
