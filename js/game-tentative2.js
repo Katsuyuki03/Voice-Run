@@ -60,8 +60,6 @@ function setup() {
 
 startButton.addEventListener(`click`, () => {
     userStartAudio();
-    inputHandler.mic.start();
-    inputHandler.initilized = true;
     startButton.classList.add('btn-hidden');
     titleImg.classList.add('btn-list-hidden');
     requestAnimationFrame(gameLoop);
@@ -72,7 +70,7 @@ againButton.addEventListener(`click`, () => {
     gamestate = true;
     lastTime = 0;
     counter = 0;
-    interval = 0;
+    interval = 5000;
     bomb = [];
     toge = [];
     againButton.classList.add('btn-list-hidden');
