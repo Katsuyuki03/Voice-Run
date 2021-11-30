@@ -40,7 +40,7 @@ const inputHandler = new InputHandler(dino);
 
 let lastTime = 0;
 let counter = 0;
-let interval = 0;　
+let interval = 5000;　
 
 function setup() {
        console.log("setup");
@@ -60,6 +60,8 @@ function setup() {
 
 startButton.addEventListener(`click`, () => {
     userStartAudio();
+    inputHandler.mic.start();
+    inputHandler.initilized = true;
     startButton.classList.add('btn-hidden');
     titleImg.classList.add('btn-list-hidden');
     requestAnimationFrame(gameLoop);

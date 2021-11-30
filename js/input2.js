@@ -9,7 +9,6 @@ export class InputHandler{
      mic.start();
    }
  
-     
      constructor(dino){
          
        this.initilized = false;
