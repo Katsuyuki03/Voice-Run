@@ -60,6 +60,7 @@ function setup() {
 
 startButton.addEventListener(`click`, () => {
     // userStartAudio();
+    inputHandler.speech();
     startButton.classList.add('btn-hidden');
     titleImg.classList.add('btn-list-hidden');
     requestAnimationFrame(gameLoop);

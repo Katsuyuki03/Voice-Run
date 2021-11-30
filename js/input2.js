@@ -64,7 +64,6 @@ export class InputHandler{
        this.mic;
        this.vol = 0;
        this.dino = dino;
-       this.speech();
       }
   
      setup() {
