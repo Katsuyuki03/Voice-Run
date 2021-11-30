@@ -2,7 +2,7 @@ export class InputHandler{
 
   setup() {
   // // Create an Audio input
-    mic = new p5.AudioIn();
+    // mic = new p5.AudioIn();
    
   //   // start the Audio Input.
   //  // By default, it does not .connect() (to the computer speakers)
@@ -18,7 +18,7 @@ export class InputHandler{
  
    // 音声認識バージョン
    //   // 音声認識を利用するのに SpeechRecognition を利用します
-   window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition();
+   window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
    const speechRecognition = new webkitSpeechRecognition();
  
      speechRecognition.lang = "ja-JP";
