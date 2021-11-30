@@ -12,7 +12,7 @@ export class InputHandler{
     // 音声認識バージョン
     // 音声認識を利用するのに SpeechRecognition を利用します
     window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
-    const speechRecognition = new webkitSpeechRecognition();
+    const speechRecognition = new SpeechRecognition()
 
     speechRecognition.lang = "ja-JP";
     speechRecognition.continuous = true;
@@ -21,6 +21,7 @@ export class InputHandler{
     // 音声認識が成功した時の処理を登録します
     speechRecognition.addEventListener("result", (event) => {
       const results = event.results;
+
       for (let i = event.resultIndex; i < results.length; i++) {
         if (results[i].isFinal) {
           document.getElementById("result_text").innerHTML =

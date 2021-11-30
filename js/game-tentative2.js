@@ -22,10 +22,10 @@ let backImg = document.getElementById("img_back"); //背景
 let startButton = document.getElementById("js-btn-start");
 
 
-
 let againButton = document.getElementById("js-btn-again");
- 
 
+
+ 
 const GAME_WIDTH = 800;　//ゲームキャンバスの幅
 const GAME_HEIGHT = 500;　//ゲームキャンバスの高さ
 
@@ -36,11 +36,10 @@ let bomb = [];
 let toge = [];
 
 const inputHandler = new InputHandler(dino);
-
-
 let lastTime = 0;
 let counter = 0;
 let interval = 5000;　
+
 
 function setup() {
        console.log("setup");
@@ -49,12 +48,10 @@ function setup() {
   }
   
   window.setup = setup;
-
  // function mousePressed() {
  //   console.log('css/start.css');
  //   userStartAudio();
   //  requestAnimationFrame(gameLoop);
-
 //}
 //window.mousePressed = mousePressed;
 
@@ -65,7 +62,6 @@ startButton.addEventListener(`click`, () => {
     titleImg.classList.add('btn-list-hidden');
     requestAnimationFrame(gameLoop);
 });
-
 againButton.addEventListener(`click`, () => {
     score = 0;
     gamestate = true;
@@ -78,23 +74,14 @@ againButton.addEventListener(`click`, () => {
     titleImg.classList.add('btn-list-hidden');
     requestAnimationFrame(gameLoop);
 });
-
-
-
 function gameLoop(timestamp){
     let deltaTime = timestamp -lastTime;
     lastTime = timestamp;
-
     ctx.drawImage(backImg,0,0,GAME_WIDTH,GAME_HEIGHT); //背景の描写 
-
     inputHandler.update();
-
-
     dino.update(deltaTime); 
     dino.draw(ctx);
-
     counter += deltaTime;
-
     // if(counter > interval){　//800ミリ秒から２秒間隔で爆弾を生成
     //    if(Math.random()<3){
     //        bomb.push(new Bomb(GAME_WIDTH,GAME_HEIGHT));
@@ -105,19 +92,15 @@ function gameLoop(timestamp){
     //     counter = 0;
     //     interval = getRandomInt(800,6000); //インターバルを800ミリ秒から２秒までの乱数に設定
     // }
-
     ctx.font = "40px sans-serif";　　　　　//スコアとして表示する文字の大きさとフォント
     ctx.fillText("Score:"+score,60,60);  //スコアを（60,60）の位置に表示する
-
     for(var i = bomb.length-1; i>= 0; i--){
         
         bomb[i].update(deltaTime);
         bomb[i].draw(ctx);
-
         //爆弾が恐竜と当たったかどうかの判定
         if(bomb[i].checkHit(dino.position.x,dino.position.y,dino.r,
             bomb[i].position.x,bomb[i].position.y,bomb[i].r)){
-
                 //もし衝突したら爆弾クラスで読み込んだ音を出す
                 var playbomb = bomb[i].audio.play();
                 //ユーザー操作がなかった時に、DOMExceptionのエラーがおこるため
@@ -141,17 +124,13 @@ function gameLoop(timestamp){
             bomb.shift();
         }
     }
-
-
     for(var i = toge.length-1; i>= 0; i--){
         
         toge[i].update(deltaTime);
         toge[i].draw(ctx);
-
         //とげが人と当たったかどうかの判定
         if(toge[i].checkHit(dino.position.x,dino.position.y,dino.r,
             toge[i].position.x,toge[i].position.y,toge[i].r)){
-
                 //もし衝突したらとげクラスで読み込んだ音を出す
                 var playtoge = toge[i].audio.play();
                 //ユーザー操作がなかった時に、DOMExceptionのエラーがおこるため
@@ -175,7 +154,6 @@ function gameLoop(timestamp){
             toge.shift();
         }
     }
-
     //ゲーム状態がfalseだったらゲームをストップ
     if(!gamestate){
         againButton.classList.remove('btn-hidden');
