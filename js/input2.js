@@ -2,11 +2,11 @@ export class InputHandler{
 
   setup() {
   // // Create an Audio input
-    mic = new p5.AudioIn();
+    // mic = new p5.AudioIn();
    
   //   // start the Audio Input.
   //  // By default, it does not .connect() (to the computer speakers)
-     mic.start();
+    //  mic.start();
    }
  
      constructor(dino){
