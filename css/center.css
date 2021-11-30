@@ -46,3 +46,10 @@ left:0;
 .btn-list-hidden {
   display: none;
 }
+
+#result_text {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 24px;
+}
