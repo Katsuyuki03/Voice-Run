@@ -59,7 +59,7 @@ function setup() {
 //window.mousePressed = mousePressed;
 
 startButton.addEventListener(`click`, () => {
-    userStartAudio();
+    // userStartAudio();
     startButton.classList.add('btn-hidden');
     titleImg.classList.add('btn-list-hidden');
     requestAnimationFrame(gameLoop);

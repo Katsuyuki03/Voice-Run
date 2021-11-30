@@ -23,7 +23,7 @@ export class InputHandler{
  
      speechRecognition.lang = "ja-JP";
      speechRecognition.continuous = true;
-     speechRecognition.interimResults = false;
+     speechRecognition.interimResults = ture;
  
    //   // 音声認識を開始する
       speechRecognition.start();
