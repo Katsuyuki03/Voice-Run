@@ -12,7 +12,11 @@ export class InputHandler{
     // 音声認識バージョン
     // 音声認識を利用するのに SpeechRecognition を利用します
     window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
+<<<<<<< HEAD
     const speechRecognition = new SpeechRecognition()
+=======
+    const speechRecognition = new SpeechRecognition();
+>>>>>>> 16af8ed0cad705f61584b9b3027b24de3de76c88
 
     speechRecognition.lang = "ja-JP";
     speechRecognition.continuous = true;
