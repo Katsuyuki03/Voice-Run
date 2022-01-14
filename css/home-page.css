@@ -1,0 +1,15 @@
+.home {
+    height:100%;
+    
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    
+    }
+
+    .name{
+        display: block;
+        margin:auto;
+    }
+
+    
