@@ -25,8 +25,8 @@ let againButton = document.getElementById("js-btn-again");
 let homeButton = document.getElementById("js-btn-home");
 
 
-const GAME_WIDTH = 800;　//ゲームキャンバスの幅
-const GAME_HEIGHT = 500;　//ゲームキャンバスの高さ
+const GAME_WIDTH = 800; //ゲームキャンバスの幅
+const GAME_HEIGHT = 500; //ゲームキャンバスの高さ
 
 let dino = new Dino(GAME_WIDTH,GAME_HEIGHT);
 
