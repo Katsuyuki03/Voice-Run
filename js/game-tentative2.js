@@ -21,8 +21,9 @@ let backImg = document.getElementById("img_back"); //背景
 
 let startButton = document.getElementById("js-btn-start");
 
-
 let againButton = document.getElementById("js-btn-again");
+
+let homeButton = document.getElementById("js-btn-home");
 
 
  
@@ -45,6 +46,7 @@ function setup() {
        console.log("setup");
    inputHandler.setup();
    againButton.classList.add('btn-hidden');
+   homeButton.classList.add('btn-hidden');
   }
   
   window.setup = setup;
@@ -71,6 +73,7 @@ againButton.addEventListener(`click`, () => {
     bomb = [];
     toge = [];
     againButton.classList.add('btn-list-hidden');
+    homeButton.classList.add('btn-list-hidden');
     titleImg.classList.add('btn-list-hidden');
     requestAnimationFrame(gameLoop);
 });
@@ -82,16 +85,16 @@ function gameLoop(timestamp){
     dino.update(deltaTime); 
     dino.draw(ctx);
     counter += deltaTime;
-    // if(counter > interval){　//800ミリ秒から２秒間隔で爆弾を生成
-    //    if(Math.random()<3){
-    //        bomb.push(new Bomb(GAME_WIDTH,GAME_HEIGHT));
-    //    }else{
-    //         toge.push(new Toge(GAME_WIDTH,GAME_HEIGHT));
-    //    }
+    if(counter > interval){　//800ミリ秒から２秒間隔で爆弾を生成
+       if(Math.random()<3){
+           bomb.push(new Bomb(GAME_WIDTH,GAME_HEIGHT));
+       }else{
+            toge.push(new Toge(GAME_WIDTH,GAME_HEIGHT));
+       }
          
-    //     counter = 0;
-    //     interval = getRandomInt(800,6000); //インターバルを800ミリ秒から２秒までの乱数に設定
-    // }
+        counter = 0;
+        interval = getRandomInt(800,6000); //インターバルを800ミリ秒から２秒までの乱数に設定
+    }
     ctx.font = "40px sans-serif";　　　　　//スコアとして表示する文字の大きさとフォント
     ctx.fillText("Score:"+score,60,60);  //スコアを（60,60）の位置に表示する
     for(var i = bomb.length-1; i>= 0; i--){
@@ -157,6 +160,7 @@ function gameLoop(timestamp){
     //ゲーム状態がfalseだったらゲームをストップ
     if(!gamestate){
         againButton.classList.remove('btn-hidden');
+        homeButton.classList.remove('btn-hidden');
         titleImg.classList.remove('btn-list-hidden');
         return;
     }

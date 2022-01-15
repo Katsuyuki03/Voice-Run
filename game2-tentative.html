@@ -10,6 +10,8 @@
                 
         <link rel="stylesheet" href="css/start.css">
         <link rel="stylesheet" href="css/center.css">
+        <link rel="stylesheet" href="css/home-page.css">
+
         <style>
         
         img{
@@ -24,25 +26,29 @@
     </head>
     <body>
         
+        <div class="home">
+            <div>
       
-       <div class="outer">
-            <div class="inner">
+                <div class="outer">
+                        <div class="inner">
+                            
+                            <!-- ▼ js から要素を操作するように専用の ID 付与した -->
+                            <div id="js-btn-list" class="btn-list2">
+                                <a id="js-btn-start"  class="name btn btn-border1"><span>start</span></a>
+                                
+                                <a id="js-btn-again"  class="name btn btn-border1"><span>continue</span></a>
+                                
+                                <a id="js-btn-home" href="https://voice-run.ga/home-page.html" class="name btn btn-border1"><span>ゲーム選択に戻る</span></a>
+                            </div>
                 
-     <!-- ▼ js から要素を操作するように専用の ID 付与した -->
-     <div id="js-btn-list" class="btn-list2">
-        <a id="js-btn-start"  class="btn btn-border1"><span>start</span></a>
-        
-        <a id="js-btn-again"  class="btn btn-border1"><span>continue</span></a>
-        
-    </div>
-      
-        
-        <canvas id ="gameScreen" width="800" height="500"></canvas>
-        
-        
+                    
+                            <canvas id ="gameScreen" width="800" height="500"></canvas>
+                    
+                    
+                        </div>
+                </div>
+            </div>
         </div>
-             </div>
-
 
        <div id="result_text"></div>
 

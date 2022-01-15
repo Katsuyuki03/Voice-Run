@@ -10,7 +10,7 @@
 
         <link rel="stylesheet" href="css/start.css">
         <link rel="stylesheet" href="css/center.css">
-
+        <link rel="stylesheet" href="css/home-page.css">
         
 
 
@@ -30,24 +30,29 @@
     </head>
     <body>
 
-       <div class="outer">
-            <div class="inner">
-        <!-- ▼ js から要素を操作するように専用の ID 付与した -->
-    <div id="js-btn-list" class="btn-list">
+        <div class="home">
+            <div>
 
-        <a id="js-btn-start"  class="btn btn-border1"><span>start</span></a>
+                <div class="outer">
+                        <div class="inner">
+                                <!-- ▼ js から要素を操作するように専用の ID 付与した -->
+                            <div id="js-btn-list" class="btn-list">
 
-        <a id="js-btn-again"  class="btn btn-border1"><span>continue</span></a>
-        
-    </div>
-      
-        
-        <canvas id ="gameScreen" width="800" height="500"></canvas>
-        
+                                <a id="js-btn-start"  class="name btn btn-border1"><span>start</span></a>
+
+                                <a id="js-btn-again"  class="name btn btn-border1"><span>continue</span></a>
+
+                                <a id="js-btn-home" href="https://voice-run.ga/home-page.html" class="name btn btn-border1"><span>ゲーム選択に戻る</span></a>
+                    
+                            </div>
+                
+                    
+                            <canvas id ="gameScreen" width="800" height="500"></canvas>
+                    
+                        </div>
+                 </div>
+            </div>
         </div>
-             </div>
-      
-       
        
         <script src="js/p5.min.js"></script>
         <script src="js/p5.sound.js"></script>

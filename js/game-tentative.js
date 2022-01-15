@@ -20,10 +20,10 @@ let backImg = document.getElementById("img_back"); //背景
 
 let startButton = document.getElementById("js-btn-start");
 
-
-
 let againButton = document.getElementById("js-btn-again");
- 
+
+let homeButton = document.getElementById("js-btn-home");
+
 
 const GAME_WIDTH = 800;　//ゲームキャンバスの幅
 const GAME_HEIGHT = 500;　//ゲームキャンバスの高さ
@@ -44,6 +44,7 @@ function setup() {
        console.log("setup");
    inputHandler.setup();
    againButton.classList.add('btn-hidden');
+   homeButton.classList.add('btn-hidden');
   }
   
   window.setup = setup;
@@ -73,6 +74,7 @@ againButton.addEventListener(`click`, () => {
     interval = 5000;
     bomb = [];
     againButton.classList.add('btn-list-hidden');
+    homeButton.classList.add('btn-list-hidden');
     titleImg.classList.add('btn-list-hidden');
     requestAnimationFrame(gameLoop);
 });
@@ -139,6 +141,7 @@ function gameLoop(timestamp){
     if(!gamestate){
         
         againButton.classList.remove('btn-hidden');
+        homeButton.classList.remove('btn-hidden');
         titleImg.classList.remove('btn-list-hidden');
         
         return;
